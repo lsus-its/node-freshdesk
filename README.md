@@ -63,7 +63,7 @@ Here are the currently supported functions. For a detailed explanation of the ar
   method: get
   url: `/ticket_fields.json`
 
-* **addNoteToTicket** (id <number>, note <object>, cb <function>)
+* **addNoteToTicket** (id <number>, note <object>, is_private <boolean>, cb <function>)
   method: post
   url: `/helpdesk/tickets/#{id}/conversations/note.json`
 
@@ -111,7 +111,7 @@ var ticket = {
     }
   }
 };
-Freshdesk.createTicket(100, function(err, res) {
+Freshdesk.createTicket(ticket, function(err, res) {
   console.log("My Ticket is", res.body);
 });
 ```
